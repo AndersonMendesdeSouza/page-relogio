@@ -9,8 +9,8 @@ html {
 
 body {
   margin: 0;
-  background: #101114;
-  color: #f5f5f6;
+  background: #210b2c;
+  color: #faf5fc;
   font: 16px/1.6 system-ui, sans-serif;
 }
 
@@ -42,7 +42,7 @@ a {
 }
 
 nav a:hover {
-  color: #e3fa62;
+  color: #ffbd00;
 }
 
 .brand {
@@ -51,10 +51,13 @@ nav a:hover {
   letter-spacing: -2px;
 }
 
-.brand span,
+.brand span {
+  color: #ff9d00;
+}
+
 em,
 .eyebrow {
-  color: #e3fa62;
+  color: #ffbd00;
 }
 
 .hero {
@@ -92,7 +95,7 @@ em {
 }
 
 .lead {
-  color: #b8bac3;
+  color: #d0bfd8;
   max-width: 490px;
   font-size: 18px;
   margin: 0;
@@ -108,8 +111,8 @@ em {
   align-items: center;
   justify-content: center;
   min-height: 54px;
-  background: #e3fa62;
-  color: #111;
+  background: #ffbd00;
+  color: #210b2c;
   font-weight: 800;
   padding: 16px 24px;
   border-radius: 12px;
@@ -119,13 +122,13 @@ em {
 }
 
 .cta:hover {
-  background: #f0ff9b;
+  background: #ffcf40;
 }
 
 .small,
 figcaption,
 footer {
-  color: #a5a7b0;
+  color: #bca9c6;
   font-size: 13px;
 }
 
@@ -139,24 +142,49 @@ footer {
 
 .product-photo {
   grid-area: photo;
+  position: relative;
+  isolation: isolate;
   margin: 0;
-  background: #fff;
+  background:
+    radial-gradient(ellipse at 50% 78%, #c637ff80, transparent 52%),
+    radial-gradient(circle at 72% 18%, #a342f04d, transparent 24%),
+    radial-gradient(ellipse at 30% 30%, #7c22d499, transparent 58%),
+    linear-gradient(145deg, #23093f, #4b1278 55%, #19072f);
+  border: 1px solid #b66bf433;
   border-radius: 24px;
   padding: 20px;
   text-align: center;
   overflow: hidden;
 }
 
+.product-photo::before {
+  content: "";
+  position: absolute;
+  left: 16%;
+  bottom: 52px;
+  width: 68%;
+  height: 8%;
+  border-radius: 50%;
+  background: #100620a3;
+  filter: blur(12px);
+  pointer-events: none;
+}
+
 .product-photo img {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   height: auto;
   max-height: 460px;
   object-fit: contain;
+  filter: drop-shadow(0 16px 16px #0b021d80) drop-shadow(0 -2px 8px #c56aff33);
 }
 
 figcaption {
-  color: #595b64;
+  position: relative;
+  z-index: 1;
+  color: #eadcf4;
   margin-top: 8px;
 }
 
@@ -185,7 +213,7 @@ figcaption {
 }
 
 .highlights span {
-  color: #b8bac3;
+  color: #d0bfd8;
   font-size: 14px;
   margin-top: 4px;
 }
@@ -208,7 +236,7 @@ h2 {
 }
 
 .cards article {
-  background: #1b1d22;
+  background: #32133f;
   border: 1px solid #ffffff15;
   border-radius: 18px;
   padding: 26px;
@@ -223,7 +251,7 @@ h3 {
 .cards p,
 .section-description,
 .closing > p:not(.eyebrow) {
-  color: #b8bac3;
+  color: #d0bfd8;
 }
 
 .cards p {
@@ -261,11 +289,11 @@ summary {
 
 summary:hover,
 details[open] summary {
-  color: #e3fa62;
+  color: #ffbd00;
 }
 
 details p {
-  color: #b8bac3;
+  color: #d0bfd8;
   margin: 0 0 20px;
 }
 
@@ -289,7 +317,7 @@ footer {
 
 footer strong {
   font-size: 22px;
-  color: #f5f5f6;
+  color: #faf5fc;
 }
 
 footer p {
@@ -303,8 +331,8 @@ button {
   font: inherit;
   font-size: 14px;
   border-radius: 8px;
-  border: 1px solid #777;
-  background: #24262c;
+  border: 1px solid #81618e;
+  background: #422052;
   color: white;
 }
 
@@ -313,7 +341,7 @@ button {
   bottom: 20px;
   right: 20px;
   width: min(340px, calc(100% - 30px));
-  background: #24262c;
+  background: #32133f;
   padding: 20px;
   border: 1px solid #ffffff30;
   border-radius: 16px;
@@ -336,7 +364,7 @@ button {
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 3px solid #e3fa62;
+  outline: 3px solid #ffbd00;
   outline-offset: 4px;
 }
 
@@ -444,7 +472,7 @@ summary:focus-visible {
     left: 0;
     right: 0;
     padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
-    background: #101114f5;
+    background: #210b2cf5;
     border-top: 1px solid #ffffff20;
     z-index: 3;
   }
