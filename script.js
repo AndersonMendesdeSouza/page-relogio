@@ -1,5 +1,5 @@
 // Preencha antes de publicar.
-const CONFIG = { affiliateUrl: '', pixelId: '' };
+const CONFIG = { affiliateUrl: 'https://meli.la/2VofP65', pixelId: '' };
 const consent = document.querySelector('#consent');
 let pixelLoaded = false;
 function loadPixel(){if(pixelLoaded || !/^\d+$/.test(CONFIG.pixelId))return;pixelLoaded=true;window.fbq=function(){window.fbq.callMethod?window.fbq.callMethod.apply(window.fbq,arguments):window.fbq.queue.push(arguments)};window._fbq=window.fbq;fbq.push=fbq;fbq.loaded=true;fbq.version='2.0';fbq.queue=[];const s=document.createElement('script');s.async=true;s.src='https://connect.facebook.net/en_US/fbevents.js';document.head.append(s);fbq('init',CONFIG.pixelId);fbq('consent','grant');fbq('track','PageView');}
